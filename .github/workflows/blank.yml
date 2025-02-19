@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise!</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe4e1;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+        }
+        h1 {
+            color: #ff1493;
+        }
+        .btn {
+            display: block;
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+        .pink { background-color: #ff69b4; color: white; }
+        .blue { background-color: #1e90ff; color: white; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="question1">
+        <h1>💖 Important Question! 💖</h1>
+        <p>Do you think I'm awesome? 😏</p>
+        <button class="btn pink" onclick="showNext('question2')">Yes, totally! 🤩</button>
+        <button class="btn blue" onclick="showNext('question2')">Hmm... Maybe. 🤔</button>
+    </div>
+
+    <div class="container hidden" id="question2">
+        <h1>Oops! Wrong answer! 😆</h1>
+        <p>Just kidding, there's no wrong answer! But I have one more question...</p>
+        <button class="btn pink" onclick="showNext('final')">Continue 👉</button>
+    </div>
+
+    <div class="container hidden" id="final">
+        <h1>🎉 Surprise! 🎂</h1>
+        <p>Happy Birthday, Hiba! 🥳🎁</p>
+        <p>You are amazing, and remember that I love you no matter what! 
+I hope your day is filled with joy and laughter!!💖</p>
+    </div>
+
+    <script>
+        function showNext(id) {
+            document.getElementById("question1").classList.add("hidden");
+            document.getElementById("question2").classList.add("hidden");
+            document.getElementById("final").classList.add("hidden");
+
+            document.getElementById(id).classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html>
